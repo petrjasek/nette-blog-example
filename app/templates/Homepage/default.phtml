@@ -1,0 +1,13 @@
+{block content}
+<h1>Latest posts</h1>
+
+<ul>
+    {foreach $posts as $post}
+    <li><h2><a href="{plink detail $post->id}">{$post->title}</a></h2>
+        <p>{$post->post|truncate:50}</p>
+        <p><a href="{plink edit $post->id}">edit</a> | <a href="{link delete! $post->id}">delete</a></p>
+    </li>
+    {/foreach}
+</ul>
+
+<p><a href="{plink edit}">+ Add new</a></p>
